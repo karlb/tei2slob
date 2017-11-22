@@ -53,6 +53,8 @@ TAG_INCLUDE = '{http://www.w3.org/2001/XInclude}include'
 
 def text(parent, path):
     element = parent.find(path, NS_MAP)
+    if element is None:
+        return ''
     return ''.join(element.itertext())
 
 
